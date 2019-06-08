@@ -12,3 +12,6 @@ Przełączamy się na połączenie użytwonika tutorial.
 https://www.youtube.com/watch?v=Sy5f6dtBDhg&list=PLU2dl_1LV_SQWZI2R_RSEeYm1tfueszOc&index=6  
 
 ### Po poprawnym połączeniu się z bazą danych w terminalu ma się pojawić 'true' -> oznacza to, że poprawnie dodał nam się obiekt do stworzonej bazy danych.
+
+### Open Weather Map API
+https://bitbucket.org/aksinghnet/owm-japis/src/master/  
