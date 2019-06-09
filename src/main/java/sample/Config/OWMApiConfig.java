@@ -1,4 +1,4 @@
-package sample;
+package sample.Config;
 
 /* Klasa na użycie Singletona */
 public class OWMApiConfig {

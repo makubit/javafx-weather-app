@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.model.CurrentWeather;
+import sample.Config.CityDataInitializer;
+import sample.Config.OWMApiConfig;
+import sample.Entities.TestEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,7 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-
+        CityDataInitializer.initializeCityData();
 
         Parent root = FXMLLoader.load(getClass().getResource("/mainWindow.fxml"));
         primaryStage.setTitle("Weather App");
@@ -28,7 +31,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
+        /* PRZYKŁAD POŁĄCZENIA Z BAZĄ DANYCH */
+
+        /*EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         TestEntity model = new TestEntity();
@@ -40,8 +45,12 @@ public class Main extends Application {
         entityManager.getTransaction().commit();
 
         System.out.println(entityManager.contains(model));
+        entityManager.close();
+        entityManagerFactory.close();*/
 
+        /* * * * * * * * * * * * */
         /* TEST POŁĄCZENIA Z API */
+
         OWM owm = new OWM((OWMApiConfig.getInstance().getApiKey()));
         owm.setUnit(OWM.Unit.METRIC);
         System.out.println((OWMApiConfig.getInstance().getApiKey()));
@@ -62,9 +71,5 @@ public class Main extends Application {
         }
 
         launch(args);
-
-        entityManager.close();
-        entityManagerFactory.close();
-
     }
 }
