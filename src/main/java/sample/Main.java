@@ -24,7 +24,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("/mainWindow.fxml"));
         primaryStage.setTitle("Weather App");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 727.0,587.0));
         primaryStage.show();
 
     }
