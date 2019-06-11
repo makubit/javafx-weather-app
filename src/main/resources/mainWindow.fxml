@@ -19,6 +19,7 @@
     <Label fx:id="jak" layoutX="200.0" layoutY="14.0" text="Jak jest??"/>
      <ScrollPane fx:id="s" layoutX="51.5" layoutY="200.5">
          <content>
+
              <Pane prefHeight="300.0" prefWidth="500.0">
                  <Label fx:id="label1" layoutX="50.0" layoutY="40.0" text="1"/>
                  <Label fx:id="label2" layoutX="220.0" layoutY="40.0" text="2"/>
@@ -29,6 +30,7 @@
                  <Label fx:id="label7" layoutX="50.0" layoutY="240.0" text="7"/>
                  <Label fx:id="label8" layoutX="220.0" layoutY="240.0" text="8"/>
                  <Label fx:id="label9" layoutX="390.0" layoutY="240.0" text="9"/>
+
 
             </Pane>
          </content>

@@ -20,6 +20,7 @@ import javax.persistence.Persistence;
 import static sample.Config.CityDataInitializer.miasta;
 
 public class Main extends Application {
+    public static String[] pogoda= new String[9];
 
     @Override
     public void start(Stage stage) throws Exception{
@@ -78,7 +79,8 @@ public class Main extends Application {
             System.out.println("Temperatura: " + cwd.getMainData().getTempMax()
                     + "/" + cwd.getMainData().getTempMin() + "\'C");
             for (int i=0; i<9;i++) {
-                System.out.println("Data: " + hwf.getDataList().get(i).getDateTimeText()+"\t Temperatura: "+hwf.getDataList().get(i).getMainData().getTemp()+"'C\tWilgotność powietrza: "+hwf.getDataList().get(i).getMainData().getHumidity()+"\tCiśnienie: "+hwf.getDataList().get(i).getMainData().getPressure()+"\tNiebo: "+ hwf.getDataList().get(i).getWeatherList().get(0).getMoreInfo());
+                pogoda[i]="Data: " +  hwf.getDataList().get(i).getDateTimeText()+"\t Temperatura: "+hwf.getDataList().get(i).getMainData().getTemp()+"'C\tWilgotność powietrza: "+hwf.getDataList().get(i).getMainData().getHumidity()+"\tCiśnienie: "+hwf.getDataList().get(i).getMainData().getPressure()+"\tNiebo: "+ hwf.getDataList().get(i).getWeatherList().get(0).getMoreInfo();
+                System.out.println(pogoda[i]);
             }
         }
         catch (APIException e) {
