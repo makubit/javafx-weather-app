@@ -51,3 +51,8 @@
     -fx-pref-height: 35px;
     -fx-pref-width: 130px;
 }
+.text-field
+{
+   -fx-border-color: ADD9E6;
+
+}
