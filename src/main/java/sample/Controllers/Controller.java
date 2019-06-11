@@ -48,7 +48,7 @@ public class Controller {
         FXMLLoader loader = new FXMLLoader();
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
-        Scene scene = new Scene(rootNode, 750, 560);
+        Scene scene = new Scene(rootNode,  600, 580);
         scene.getStylesheets().add("/style/style2.css");
         this.label1.setText(pogoda[0]);
         this.label2.setText(pogoda[1]);
