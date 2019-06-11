@@ -29,7 +29,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
-        Scene scene = new Scene(rootNode, 750, 560);
+        Scene scene = new Scene(rootNode, 600, 580);
         scene.getStylesheets().add("/style/style.css");
 
         stage.setTitle("Weather App");
