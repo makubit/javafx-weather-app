@@ -12,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane id="pane" minHeight="537.0" minWidth="727.0" prefHeight="579.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="pane" minHeight="537.0" minWidth="727.0" prefHeight="579.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
 
     <children>
     <Label layoutX="314.0" layoutY="14.0" text="JAK JEST??"/>
-        <Button fx:id="mode" layoutX="600.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="night mode" />
+        <Button fx:id="mode" layoutX="600.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="night mode" onAction="#modeOnClick"/>
 
         <Button layoutX="234.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Dzisiaj"/>
         <Button layoutX="390.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Jutro"/>
