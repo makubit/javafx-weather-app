@@ -5,8 +5,11 @@ import sample.Entities.City;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class CityDataInitializer {
+    public static List miasta;
+
     public static void initializeCityData() {
         City radom = new City();
         radom.setCityName("Radom");
@@ -34,6 +37,7 @@ public class CityDataInitializer {
 
         // Przykład zastosowania zapytania do bazy
         System.out.println(entityManager.createQuery("SELECT cityName FROM City").setMaxResults(3).getResultList());
+        miasta=entityManager.createQuery("SELECT cityName FROM City WHERE cityName='Radom'").getResultList();
 
         entityManager.close();
         entityManagerFactory.close();

@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.model.CurrentWeather;
+import net.aksingh.owmjapis.model.HourlyWeatherForecast;
 import sample.Config.CityDataInitializer;
 import sample.Config.OWMApiConfig;
 import sample.Entities.TestEntity;
@@ -16,11 +17,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import static sample.Config.CityDataInitializer.miasta;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        CityDataInitializer.initializeCityData();
+
 
         Parent root = FXMLLoader.load(getClass().getResource("/mainWindow.fxml"));
         primaryStage.setTitle("Weather App");
@@ -30,7 +33,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-
+        CityDataInitializer.initializeCityData();
+        String miasto= (String) miasta.get(0);
         /* PRZYKŁAD POŁĄCZENIA Z BAZĄ DANYCH */
 /*
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
@@ -57,14 +61,19 @@ public class Main extends Application {
 
         try {
             //szukamy miasta -> Radom
-            CurrentWeather cwd = owm.currentWeatherByCityName("Radom");
+            //System.out.println("Miasto: "+miasto);
 
+            CurrentWeather cwd = owm.currentWeatherByCityName(miasto);
+            HourlyWeatherForecast hwf=owm.hourlyWeatherForecastByCityName(miasto);
             //Drukujemy nazwę miasta -> czy nam dobrze znalazło
             System.out.println("Miasto: " + cwd.getCityName());
 
             // printing the max./min. temperature
             System.out.println("Temperatura: " + cwd.getMainData().getTempMax()
                     + "/" + cwd.getMainData().getTempMin() + "\'C");
+            for (int i=0; i<9;i++) {
+                System.out.println("Data: " + hwf.getDataList().get(i).getDateTimeText()+"\t Temperatura: "+hwf.getDataList().get(i).getMainData().getTemp()+"'C\tWilgotność powietrza: "+hwf.getDataList().get(i).getMainData().getHumidity()+"\tCiśnienie: "+hwf.getDataList().get(i).getMainData().getPressure()+"\tNiebo: "+ hwf.getDataList().get(i).getWeatherList().get(0).getMoreInfo());
+            }
         }
         catch (APIException e) {
             System.out.println(e.getMessage());
