@@ -22,13 +22,19 @@ import static sample.Config.CityDataInitializer.miasta;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage stage) throws Exception{
 
 
-        Parent root = FXMLLoader.load(getClass().getResource("/mainWindow.fxml"));
-        primaryStage.setTitle("Weather App");
-        primaryStage.setScene(new Scene(root, 727.0,587.0));
-        primaryStage.show();
+        String fxmlFile = "/mainWindow.fxml";
+        FXMLLoader loader = new FXMLLoader();
+        Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
+
+        Scene scene = new Scene(rootNode, 750, 560);
+        scene.getStylesheets().add("/style/style.css");
+
+        stage.setTitle("Weather App");
+        stage.setScene(scene);
+        stage.show();
 
     }
 
