@@ -37,7 +37,7 @@ public class CityDataInitializer {
 
         // Przykład zastosowania zapytania do bazy
         System.out.println(entityManager.createQuery("SELECT cityName FROM City").setMaxResults(3).getResultList());
-        miasta=entityManager.createQuery("SELECT cityName FROM City WHERE cityName='Radom'").getResultList();
+        miasta=entityManager.createQuery("SELECT cityName FROM City").getResultList();
 
         entityManager.close();
         entityManagerFactory.close();
