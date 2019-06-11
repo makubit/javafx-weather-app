@@ -23,7 +23,7 @@
 
 .label {
     -fx-font-size: 25px;
-    -fx-background-color: #cfd9dc;
+
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
@@ -40,4 +40,14 @@
 }
 .button:hover{
     -fx-base: #395bae;
+}
+#combo
+{
+    -fx-text-fill: #000000;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-background-color: #cfd9dc;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-pref-height: 35px;
+    -fx-pref-width: 130px;
 }

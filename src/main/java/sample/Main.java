@@ -21,17 +21,6 @@ import javax.persistence.Persistence;
 
 
 public class Main extends Application {
-
-
-    @FXML private javafx.scene.control.Button mode;
-
-    private int activeButton;
-
-    public void modeOnClick(ActionEvent actionEvent)
-    {
-        this.activeButton = 1;
-    }
-
     @Override
     public void start(Stage stage) throws Exception{
         CityDataInitializer.initializeCityData();
@@ -41,18 +30,7 @@ public class Main extends Application {
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
         Scene scene = new Scene(rootNode, 750, 560);
-
-
         scene.getStylesheets().add("/style/style.css");
-
-        switch(activeButton) {
-            case 0:
-                scene.getStylesheets().add("/style/style.css");
-                break;
-            case 1:
-                scene.getStylesheets().add("/style/style2.css");
-                break;
-        }
 
         stage.setTitle("Weather App");
         stage.setScene(scene);
@@ -86,6 +64,7 @@ public class Main extends Application {
         OWM owm = new OWM((OWMApiConfig.getInstance().getApiKey()));
         owm.setUnit(OWM.Unit.METRIC);
         System.out.println((OWMApiConfig.getInstance().getApiKey()));
+
 
         try {
             //szukamy miasta -> Radom
