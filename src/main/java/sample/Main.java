@@ -24,7 +24,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("/mainWindow.fxml"));
         primaryStage.setTitle("Weather App");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 727.0,587.0));
         primaryStage.show();
 
     }
@@ -32,8 +32,8 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         /* PRZYKŁAD POŁĄCZENIA Z BAZĄ DANYCH */
-
-        /*EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
+/*
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         TestEntity model = new TestEntity();
@@ -46,8 +46,8 @@ public class Main extends Application {
 
         System.out.println(entityManager.contains(model));
         entityManager.close();
-        entityManagerFactory.close();*/
-
+        entityManagerFactory.close();
+*/
         /* * * * * * * * * * * * */
         /* TEST POŁĄCZENIA Z API */
 
