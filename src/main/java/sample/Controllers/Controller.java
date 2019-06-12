@@ -40,7 +40,10 @@ public class Controller {
     @FXML
     private javafx.scene.control.Button mode;
 
+
     private int activeButton;
+    int zm = 0;
+
     public void startNew(Stage stage) throws Exception{
         CityDataInitializer.initializeCityData();
 
@@ -48,10 +51,24 @@ public class Controller {
         FXMLLoader loader = new FXMLLoader();
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
-        Scene scene = new Scene(rootNode,  600, 580);
+        if( zm == 1 )
+            set();
+
+        Scene scene = new Scene(rootNode,  700, 580);
         scene.getStylesheets().add("/style/style2.css");
+
+        stage.setTitle("Weather App");
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+    public void set()
+    {
         this.label1.setText(pogoda[0]);
+        System.out.println(pogoda[0]);
         this.label2.setText(pogoda[1]);
+        System.out.println(pogoda[1]);
         this.label3.setText(pogoda[2]);
         this.label4.setText(pogoda[3]);
         this.label5.setText(pogoda[4]);
@@ -59,12 +76,13 @@ public class Controller {
         this.label7.setText(pogoda[6]);
         this.label8.setText(pogoda[7]);
         this.label9.setText(pogoda[8]);
-        stage.setTitle("Weather App");
-        stage.setScene(scene);
-        stage.show();
-
-
     }
+    public void setOnClick(ActionEvent actionEvent) throws Exception
+    {
+        set();
+        zm = 1;
+    }
+
     public void modeOnClick(ActionEvent actionEvent) throws Exception
     {
         System.out.println("1");

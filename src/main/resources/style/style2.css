@@ -14,16 +14,13 @@
     }
 
 .label {
-    -fx-font-size: 25px;
-
-    -fx-font-weight: bold;
-    -fx-text-fill: #76dcdb;
+    -fx-font-size: 11px;
+    -fx-text-fill: #004edc;
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 #jak
 {
     -fx-font-size: 40px;
-
     -fx-font-weight: bold;
     -fx-text-fill: #76dcdb;
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );

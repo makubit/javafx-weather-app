@@ -16,26 +16,29 @@
 <children>
     <Button fx:id="mode" layoutX="450.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="night mode" onAction="#modeOnClick"/>
 
+    <Button fx:id="set" layoutX="480.0" layoutY="500.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="read data" onAction="#setOnClick"/>
+
     <Label fx:id="jak" layoutX="200.0" layoutY="14.0" text="Jak jest??"/>
-     <ScrollPane fx:id="s" layoutX="51.5" layoutY="200.5">
+     <ScrollPane fx:id="s" layoutX="51.5" layoutY="150.5">
          <content>
 
-             <Pane prefHeight="300.0" prefWidth="500.0">
-                 <Label fx:id="label1" layoutX="50.0" layoutY="40.0" text="1"/>
-                 <Label fx:id="label2" layoutX="220.0" layoutY="40.0" text="2"/>
-                 <Label fx:id="label3" layoutX="390.0" layoutY="40.0" text="3"/>
-                 <Label fx:id="label4" layoutX="50.0" layoutY="140.0" text="4"/>
-                 <Label fx:id="label5" layoutX="220.0" layoutY="140.0" text="5"/>
-                 <Label fx:id="label6" layoutX="390.0" layoutY="140.0" text="6"/>
-                 <Label fx:id="label7" layoutX="50.0" layoutY="240.0" text="7"/>
-                 <Label fx:id="label8" layoutX="220.0" layoutY="240.0" text="8"/>
-                 <Label fx:id="label9" layoutX="390.0" layoutY="240.0" text="9"/>
+             <Pane prefHeight="300.0" prefWidth="600.0">
+
+                 <Label fx:id="label1" layoutX="10.0" layoutY="10.0" />
+                 <Label fx:id="label2" layoutX="10.0" layoutY="40.0" />
+                 <Label fx:id="label3" layoutX="10.0" layoutY="70.0"/>
+                 <Label fx:id="label4" layoutX="10.0" layoutY="100.0" />
+                 <Label fx:id="label5" layoutX="10.0" layoutY="130.0" />
+                 <Label fx:id="label6" layoutX="10.0" layoutY="160.0" />
+                 <Label fx:id="label7" layoutX="10.0" layoutY="190.0" />
+                 <Label fx:id="label8" layoutX="10.0" layoutY="220.0" />
+                 <Label fx:id="label9" layoutX="10.0" layoutY="250.0" />
 
 
             </Pane>
          </content>
       </ScrollPane>
-      <ComboBox fx:id="miasto" layoutX="52.0" layoutY="120.0" prefHeight="31.0" prefWidth="150.0" promptText="Miasto" onMouseClicked="#generateData" />
+      <ComboBox fx:id="miasto" layoutX="52.0" layoutY="100.0" prefHeight="31.0" prefWidth="150.0" promptText="Miasto" onMouseClicked="#generateData" />
       <TextFlow fx:id="textMiasto" layoutX="52.0" layoutY="534.0" prefHeight="31.0" prefWidth="621.0" />
 </children>
 </AnchorPane>
